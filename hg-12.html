@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HG-12 Yǎnshí | Hyang Gu</title>
+<meta name="description" content="The HG-12 Yǎnshí is Hyang Gu's reusable, endurance-focused reconnaissance UAV. A fictional aircraft.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Figtree:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="p-12">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="index.html">Hyang Gu</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hg-12.html" aria-current="page">HG-12</a></li>
+        <li><a href="hg-21.html">HG-21</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="title">
+  <div class="wrap">
+    <div>
+      <h1 id="title">Yǎnshí<span class="cn" lang="zh">眼视</span></h1>
+      <p class="lede">A reconnaissance aircraft built to stay in the air and keep watching.</p>
+      <p class="designation">HG-12, unmanned fixed-wing reconnaissance aircraft of Hyang Gu</p>
+      <div class="actions">
+        <a class="btn solid" href="#specs">See the specifications</a>
+        <a class="btn line" href="#sensors">Try the sensor view</a>
+      </div>
+    </div>
+
+    <div class="finder">
+      <svg id="finder" viewBox="0 0 600 520" role="img" aria-label="Top-down view of the HG-12 flying a slow survey loop over contour-lined terrain">
+        <rect class="f-bg" width="600" height="520"/>
+        <g id="contours" fill="none" stroke-width="1.4"></g>
+        <path id="route" class="f-route" d="M170,190 H430 A90,90 0 0 1 430,370 H170 A90,90 0 0 1 170,190 Z" stroke-width="2" stroke-dasharray="3 9" stroke-linecap="round"/>
+        <g>
+          <g transform="scale(1.05)">
+            <g class="f-plane">
+              <ellipse cx="0" cy="0" rx="24" ry="4.2"/>
+              <path d="M5,-3 L-3,-37 L-10,-37 L-6,-3 Z"/>
+              <path d="M5,3 L-3,37 L-10,37 L-6,3 Z"/>
+              <path d="M-18,-2 L-22,-13 L-26,-13 L-24,-2 Z"/>
+              <path d="M-18,2 L-22,13 L-26,13 L-24,2 Z"/>
+            </g>
+            <rect class="f-accent" x="-27" y="-6" width="2.4" height="12" rx="1"/>
+            <circle class="f-amber" cx="9" cy="0" r="2.6"/>
+          </g>
+          <animateMotion dur="30s" repeatCount="indefinite" rotate="auto"><mpath href="#route"/></animateMotion>
+        </g>
+        <g class="f-brackets" stroke-width="3" stroke-linecap="square">
+          <path d="M28,66 V28 H66"/><path d="M534,28 H572 V66"/>
+          <path d="M28,454 V492 H66"/><path d="M572,454 V492 H534"/>
+        </g>
+        <text x="46" y="96">Surveying</text>
+        <text x="554" y="96" text-anchor="end">about 150 km range</text>
+        <circle class="f-amber" cx="52" cy="466" r="5"/>
+        <text x="66" y="471">Recording</text>
+        <text x="554" y="471" text-anchor="end">about 120 km/h max</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section class="overview" id="overview">
+  <div class="wrap">
+    <h2>It looks, records and comes home.</h2>
+    <div class="text">
+      <p class="lede">The Yǎnshí gives Hyang Gu's commanders a clearer picture of what is happening across the areas they monitor.</p>
+      <p>It favors sustained observation and reliability over speed. Where the <a href="hg-21.html">HG-21 Fēngyǔ</a> is a one-way attack UAV, the HG-12 is made to return from every mission and fly again, so routine surveillance doesn't depend on attack aircraft.</p>
+      <p>The airframe is standardized and the surveillance equipment is modular. That keeps maintenance cheap, training simple and domestic production realistic.</p>
+    </div>
+  </div>
+</section>
+
+<section class="specs" id="specs">
+  <div class="wrap">
+    <h2>Built to stay up, not to rush.</h2>
+    <p class="intro">A modest cruising speed and long endurance suit border watches, area surveys and routine observation. Its value comes from how long and how consistently it can observe.</p>
+
+    <dl class="spec-list">
+      <div class="big"><dt>Maximum operating speed</dt><dd>~120<small>km/h</small></dd></div>
+      <div class="big"><dt>Operational range</dt><dd>~150<small>km</small></dd></div>
+      <div class="big"><dt>Endurance</dt><dd>6–8<small>hours</small></dd></div>
+      <div><dt>Aircraft type</dt><dd>Unmanned fixed-wing</dd></div>
+      <div><dt>Reusability</dt><dd>Fully reusable</dd></div>
+      <div><dt>Propulsion</dt><dd>Economical, endurance-oriented</dd></div>
+      <div><dt>Navigation</dt><dd>Onboard, with remote supervision</dd></div>
+      <div><dt>Control</dt><dd>Remote operation with onboard flight stabilization</dd></div>
+    </dl>
+    <p class="fine">Preliminary specifications for the Hyang Gu setting. Figures are approximate and not verified engineering performance.</p>
+  </div>
+</section>
+
+<section class="sensors" id="sensors">
+  <div class="wrap">
+    <h2>How the Yǎnshí sees.</h2>
+    <div class="sensor-grid">
+      <div>
+        <div class="scene-box">
+          <svg class="scene" id="scene" data-mode="day" viewBox="0 0 640 420" role="img" aria-label="Aerial scene of a river, bridge, roads and buildings, shown in daylight or thermal imaging">
+            <rect class="g" width="640" height="420"/>
+            <path class="rv" d="M-10,250 C150,230 250,300 400,260 S560,170 660,150 L660,215 C560,235 450,320 400,330 S150,300 -10,320 Z"/>
+            <rect class="rd" x="0" y="70" width="640" height="18"/>
+            <rect class="rd" x="290" y="0" width="28" height="420"/>
+            <rect class="br" x="285" y="250" width="38" height="90"/>
+            <g>
+              <rect class="bd" x="60" y="104" width="50" height="36"/>
+              <rect class="bd" x="122" y="104" width="40" height="36"/>
+              <rect class="bd" x="60" y="152" width="30" height="30"/>
+              <rect class="bd" x="102" y="150" width="60" height="32"/>
+              <rect class="bd" x="350" y="104" width="60" height="40"/>
+              <rect class="bd hot" x="432" y="100" width="46" height="36"/>
+              <rect class="bd" x="350" y="162" width="40" height="34"/>
+              <rect class="bd" x="420" y="152" width="70" height="40"/>
+              <rect class="bd" x="510" y="102" width="50" height="50"/>
+              <rect class="bd" x="80" y="352" width="60" height="40"/>
+              <rect class="bd" x="160" y="356" width="50" height="34"/>
+              <rect class="bd" x="380" y="352" width="70" height="44"/>
+              <rect class="bd hot" x="470" y="362" width="60" height="36"/>
+              <rect class="bd hot" x="548" y="324" width="70" height="60"/>
+            </g>
+            <g>
+              <circle class="tr" cx="30" cy="48" r="14"/><circle class="tr" cx="200" cy="40" r="12"/>
+              <circle class="tr" cx="580" cy="190" r="16"/><circle class="tr" cx="604" cy="214" r="12"/>
+              <circle class="tr" cx="40" cy="364" r="16"/><circle class="tr" cx="22" cy="334" r="12"/>
+              <circle class="tr" cx="250" cy="360" r="14"/><circle class="tr" cx="240" cy="190" r="13"/>
+            </g>
+            <g>
+              <rect class="vh" x="130" y="75" width="11" height="7" rx="1"/>
+              <rect class="vh" x="212" y="78" width="11" height="7" rx="1"/>
+              <rect class="vh" x="452" y="73" width="11" height="7" rx="1"/>
+              <rect class="vh" x="296" y="122" width="7" height="11" rx="1"/>
+              <rect class="vh" x="305" y="186" width="7" height="11" rx="1"/>
+              <rect class="vh" x="298" y="290" width="7" height="11" rx="1"/>
+            </g>
+            <g fill="none" stroke="#F8FAFA" stroke-opacity=".85" stroke-width="3" stroke-linecap="square">
+              <path d="M14,40 V14 H40"/><path d="M600,14 H626 V40"/><path d="M14,380 V406 H40"/><path d="M626,380 V406 H600"/>
+            </g>
+          </svg>
+        </div>
+        <div class="toggle" role="group" aria-label="Imaging mode">
+          <button type="button" data-mode="day" aria-pressed="true">Daylight camera</button>
+          <button type="button" data-mode="thermal" aria-pressed="false">Thermal imager</button>
+        </div>
+        <p class="caption" id="caption" aria-live="polite"></p>
+      </div>
+
+      <ul class="sense-list">
+        <li>
+          <h3>Electro-optical imaging</h3>
+          <p>A daylight camera records visible detail, helping personnel assess changes in monitored areas and document infrastructure conditions.</p>
+        </li>
+        <li>
+          <h3>Thermal imaging</h3>
+          <p>An infrared imager picks out differences in surface temperature, which can help in darkness or low light.</p>
+        </li>
+        <li>
+          <h3>Recording and transmission</h3>
+          <p>Imagery is recorded onboard and selected information is sent to an authorized station when communications are available. If the link drops, the recording remains.</p>
+        </li>
+        <li>
+          <h3>Navigation and flight monitoring</h3>
+          <p>Onboard navigation and stabilization keep flight consistent and let the remote operator watch the aircraft's status. They support supervision; they don't replace it.</p>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="roles">
+  <div class="wrap">
+    <div class="roles-grid">
+      <div>
+        <h2>One aircraft, five jobs.</h2>
+        <p class="lede" style="margin-top:20px">Modular equipment lets the same airframe take on different assignments.</p>
+      </div>
+      <div>
+        <details name="roles" open>
+          <summary>Border and territorial surveillance</summary>
+          <p>Long endurance lets it watch designated border regions and remote territory for far longer than a short observation flight. Recorded imagery helps authorities document changes and decide whether to look closer.</p>
+        </details>
+        <details name="roles">
+          <summary>Battlefield reconnaissance</summary>
+          <p>In exercises and fictional wartime scenarios it gives commanders a general view of terrain, visible activity and change. People still have to interpret the imagery, since a picture alone may not show identity, intent or exact capability.</p>
+        </details>
+        <details name="roles">
+          <summary>Infrastructure monitoring</summary>
+          <p>Roads, bridges, ports and power facilities can be imaged regularly to document damage, spot visible changes and decide which sites need inspection.</p>
+        </details>
+        <details name="roles">
+          <summary>Search and rescue support</summary>
+          <p>When equipped and authorized, it surveys wide areas and sends visual information to ground teams. Thermal imaging may help in suitable conditions, depending on the environment, equipment and search area.</p>
+        </details>
+        <details name="roles">
+          <summary>Training and exercises</summary>
+          <p>A reusable training fleet lets operators practice and refine standard procedures for collecting and reading aerial imagery, without spending one-way aircraft or crewed flight hours.</p>
+        </details>
+      </div>
+    </div>
+
+    <div class="chain" role="group" aria-label="How information moves">
+      <div class="node"><strong>HG-12 in flight</strong><span>Observes, records and sends selected imagery</span></div>
+      <div class="node"><strong>Ground control station</strong><span>Shows aircraft status and available live feeds</span></div>
+      <div class="node"><strong>Command network</strong><span>Archives recordings and passes reports to authorized units</span></div>
+    </div>
+    <p class="chain-note">Connectivity can be interrupted, so mission planning and safety procedures have to allow for lost links, navigation uncertainty and equipment faults.</p>
+  </div>
+</section>
+
+<section class="production" id="production">
+  <div class="wrap">
+    <h2>Made to be kept flying.</h2>
+    <div class="prod-cols">
+      <div>
+        <h3>Standard parts</h3>
+        <p>Replaceable components and common servicing procedures cut downtime between missions and let worn parts be swapped without scrapping the airframe.</p>
+      </div>
+      <div>
+        <h3>Modular equipment</h3>
+        <p>Approved equipment configurations can be adapted to different assignments without designing a new aircraft.</p>
+      </div>
+      <div>
+        <h3>Built at home</h3>
+        <p>Domestic production reduces reliance on foreign suppliers for routine repairs, as long as the electronics and other components can be sourced locally.</p>
+      </div>
+    </div>
+    <p class="prod-note">A lasting program also needs trained operators, maintenance staff, spare parts, inspection procedures, secure storage and quality control. A bigger production run doesn't automatically mean more aircraft ready for service.</p>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="wrap">
+    <h2>Where it fits.</h2>
+    <p class="lede" style="margin-top:20px">Keeping the roles apart lets Hyang Gu run routine surveillance without spending its attack UAVs.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col" class="th12">HG-12 Yǎnshí</th><th scope="col" class="th21">HG-21 Fēngyǔ</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Mission</th><td class="us">Observe, record and transmit</td><td>One-way attack</td></tr>
+          <tr><th scope="row">Returns from missions</th><td class="us">Yes</td><td>No</td></tr>
+          <tr><th scope="row">Use</th><td class="us">Flown again and again</td><td>Single mission</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="actions"><a class="btn line" href="hg-21.html">Read about the HG-21 Fēngyǔ</a><a class="btn line" href="index.html">Back to all aircraft</a></div>
+  </div>
+</section>
+
+<section class="mottos single-motto" aria-label="Motto">
+  <div class="wrap">
+    <div><q>Observe clearly. Understand completely.</q></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>The HG-12 Yǎnshí is a fictional aircraft from the Hyang Gu setting. Specifications are preliminary and are not verified engineering figures.</p>
+    <p><a href="index.html">Home</a> · <a href="hg-21.html">HG-21</a></p>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
