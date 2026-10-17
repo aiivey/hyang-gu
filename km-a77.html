@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,6 +28,7 @@ body.p-km { --accent: var(--cyan) }
 .compare .th-km { border-bottom-color: var(--cyan) }
 </style>
 </head>
+
 <body class="p-km">
 <a class="skip" href="#main">Skip to content</a>
 
@@ -59,97 +61,17 @@ body.p-km { --accent: var(--cyan) }
     </div>
 
     <div class="finder">
-      <svg viewBox="0 0 600 520" role="img" aria-label="Side-profile silhouette of the KM/A-77 fighter aircraft, showing a tapered fuselage, bubble canopy, swept wing and twin canted tail fins">
-        <defs>
-          <linearGradient id="hullGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-            <stop offset="0%" stop-color="#16333C"/>
-            <stop offset="100%" stop-color="#0A1820"/>
-          </linearGradient>
-        </defs>
-        <rect class="f-bg" width="600" height="520" fill="#E6ECEE"/>
+      <div class="sky-scene">
+        <p class="sky-motto">BUILT TO DEFEND. READY TO STRIKE.</p>
 
-        <!-- ground shadow -->
-        <ellipse cx="300" cy="400" rx="220" ry="10" fill="#9DB5BC" opacity="0.3"/>
+        <div class="cloud cloud-one" aria-hidden="true"></div>
+        <div class="cloud cloud-two" aria-hidden="true"></div>
+        <div class="cloud cloud-three" aria-hidden="true"></div>
+        <div class="cloud cloud-four" aria-hidden="true"></div>
+        <div class="cloud cloud-five" aria-hidden="true"></div>
 
-        <!-- horizontal reference lines -->
-        <g stroke="#9DB5BC" stroke-width="1" opacity="0.35">
-          <line x1="60" y1="260" x2="540" y2="260"/>
-        </g>
-
-        <!-- far tail fin (offset back, slightly smaller, suggests canted twin tail) -->
-        <path d="M418,252 L452,176 L470,180 L442,254 Z" fill="#10272F" opacity="0.65"/>
-
-        <!-- far horizontal stabilizer -->
-        <path d="M430,268 L478,290 L476,300 L428,280 Z" fill="#10272F" opacity="0.65"/>
-
-        <!-- main wing (swept, low-mounted) -->
-        <path d="M232,272 L320,278 L352,338 L322,344 L250,300 Z" fill="url(#hullGrad)" stroke="#1B7A9E" stroke-width="1.5" opacity="0.92"/>
-        <line x1="260" y1="286" x2="330" y2="330" stroke="#1B7A9E" stroke-width="1" opacity="0.5"/>
-
-        <!-- main fuselage silhouette -->
-        <path d="M70,262
-                 C 90,250 118,238 142,232
-                 C 150,218 162,206 178,200
-                 C 194,206 204,218 210,230
-                 C 244,228 286,230 330,236
-                 C 372,241 406,246 432,251
-                 C 462,255 492,258 518,261
-                 C 492,264 462,267 432,271
-                 C 406,276 372,281 330,286
-                 C 286,292 244,294 210,292
-                 C 200,300 188,308 172,312
-                 C 150,306 134,296 122,284
-                 C 104,278 86,271 70,262 Z"
-              fill="url(#hullGrad)" stroke="#0A1820" stroke-width="1"/>
-
-        <!-- canopy -->
-        <path d="M150,222 C 160,206 172,198 180,197 C 190,198 202,207 210,224 C 198,230 184,232 172,231 C 164,230 156,227 150,222 Z"
-              fill="#1B7A9E" opacity="0.85"/>
-        <path d="M156,221 C 164,210 173,203 180,203 C 188,203 198,210 205,221" fill="none" stroke="#5AB3D4" stroke-width="1" opacity="0.7"/>
-
-        <!-- caret intake -->
-        <path d="M172,246 L212,240 L216,260 L178,266 Z" fill="#3C555D" opacity="0.85"/>
-
-        <!-- nose pitot boom -->
-        <line x1="70" y1="262" x2="46" y2="262" stroke="#3C555D" stroke-width="2" stroke-linecap="round"/>
-
-        <!-- near horizontal stabilizer -->
-        <path d="M424,262 L474,284 L470,296 L420,274 Z" fill="#10272F" stroke="#1B7A9E" stroke-width="1" opacity="0.95"/>
-
-        <!-- near tail fin (canted) -->
-        <path d="M410,258 L446,182 L466,187 L434,260 Z" fill="#10272F" stroke="#1B7A9E" stroke-width="1.5"/>
-        <path d="M424,230 L448,196" stroke="#5AB3D4" stroke-width="1" opacity="0.5"/>
-
-        <!-- tail roundel -->
-        <circle cx="438" cy="222" r="9" fill="none" stroke="#1B7A9E" stroke-width="1.5"/>
-        <circle cx="438" cy="222" r="4" fill="#1B7A9E"/>
-
-        <!-- exhaust nozzle -->
-        <ellipse cx="520" cy="261" rx="9" ry="7" fill="#0A1820" stroke="#1B7A9E" stroke-width="1.5"/>
-        <path d="M524,261 L545,261" stroke="#E8A13A" stroke-width="2.5" opacity="0.55" stroke-linecap="round"/>
-
-        <!-- panel lines -->
-        <g stroke="#1B7A9E" stroke-width="0.75" opacity="0.4">
-          <line x1="220" y1="233" x2="400" y2="247"/>
-          <line x1="220" y1="288" x2="400" y2="275"/>
-          <line x1="240" y1="240" x2="250" y2="280"/>
-        </g>
-
-        <!-- weapon pylon marks under wing -->
-        <circle cx="270" cy="300" r="3.5" fill="#E8A13A" opacity="0.75"/>
-        <circle cx="305" cy="312" r="3.5" fill="#E8A13A" opacity="0.75"/>
-
-        <!-- corner brackets and labels (site pattern) -->
-        <g class="f-brackets" fill="none" stroke="#10272F" stroke-width="3" stroke-linecap="square">
-          <path d="M28,66 V28 H66"/><path d="M534,28 H572 V66"/>
-          <path d="M28,454 V492 H66"/><path d="M572,454 V492 H534"/>
-        </g>
-        <text x="46" y="96" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Fighter</text>
-        <text x="554" y="96" text-anchor="end" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Twin-engine</text>
-        <circle cx="52" cy="466" r="5" fill="#E8A13A"/>
-        <text x="66" y="471" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Stealth shaping</text>
-        <text x="554" y="471" text-anchor="end" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Advanced fighter</text>
-      </svg>
+        <div class="sky-label">KM/A-77 · TACTICAL FIGHTER PROGRAM</div>
+      </div>
     </div>
   </div>
 </section>
@@ -224,7 +146,13 @@ body.p-km { --accent: var(--cyan) }
     <p class="lede" style="margin-top:20px">The KM/A-77 represents crewed fighter capability alongside unmanned platforms and homeland defense systems.</p>
     <div class="table-scroll">
       <table>
-        <thead><tr><th scope="col"></th><th scope="col" class="th-km">KM/A-77</th><th scope="col">Unmanned systems</th></tr></thead>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col" class="th-km">KM/A-77</th>
+            <th scope="col">Unmanned systems</th>
+          </tr>
+        </thead>
         <tbody>
           <tr><th scope="row">Platform type</th><td class="us">Crewed fighter aircraft</td><td>Remotely operated or autonomous</td></tr>
           <tr><th scope="row">Endurance</th><td class="us">Hours, with aerial refueling</td><td>Hours to days depending on type</td></tr>
@@ -253,35 +181,95 @@ body.p-km { --accent: var(--cyan) }
   </div>
 </footer>
 
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const finder = document.querySelector(".finder");
-  if (!finder) return;
+<style>
+.finder .sky-scene {
+  position: relative;
+  width: 100%;
+  min-height: 390px;
+  overflow: hidden;
+  box-sizing: border-box;
+  background: linear-gradient(180deg, #83b7d1 0%, #b9d8e7 58%, #dcebf2 100%);
+}
 
-  finder.replaceChildren();
+.finder .sky-motto {
+  position: absolute;
+  z-index: 2;
+  top: 8%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0 12px;
+  box-sizing: border-box;
+  color: #10272f;
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-size: clamp(12px, 2.4vw, 18px);
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-align: center;
+}
 
-  finder.style.position = "relative";
-  finder.style.overflow = "hidden";
-  finder.style.minHeight = "390px";
-  finder.style.background = "linear-gradient(#83b7d1, #dcebf2)";
+.finder .cloud {
+  position: absolute;
+  height: 30px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow:
+    18px -15px 0 2px rgba(255, 255, 255, 0.96),
+    42px -23px 0 6px rgba(255, 255, 255, 0.96),
+    68px -14px 0 3px rgba(255, 255, 255, 0.96),
+    88px 0 0 -2px rgba(255, 255, 255, 0.96);
+}
 
-  const cloud = document.createElement("div");
-  cloud.style.cssText = `
-    position: absolute;
-    top: 25%;
-    left: 30%;
-    width: 150px;
-    height: 45px;
-    background: white;
-    border-radius: 50px;
-    box-shadow: 25px -20px 0 5px white,
-                55px -10px 0 8px white,
-                75px 5px 0 white;
-  `;
+.finder .cloud-one {
+  top: 31%;
+  left: 8%;
+  width: 78px;
+  transform: scale(0.8);
+}
 
-  finder.appendChild(cloud);
-});
-</script>
+.finder .cloud-two {
+  top: 48%;
+  left: 52%;
+  width: 110px;
+  transform: scale(1.05);
+}
+
+.finder .cloud-three {
+  top: 69%;
+  left: 16%;
+  width: 95px;
+  transform: scale(0.7);
+}
+
+.finder .cloud-four {
+  top: 73%;
+  left: 69%;
+  width: 100px;
+  transform: scale(0.8);
+}
+
+.finder .cloud-five {
+  top: 25%;
+  left: 72%;
+  width: 82px;
+  transform: scale(0.65);
+}
+
+.finder .sky-label {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  color: #244653;
+  font-family: 'Figtree', sans-serif;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-align: center;
+}
+</style>
+
 <script src="assets/site.js" defer></script>
 </body>
 </html>
