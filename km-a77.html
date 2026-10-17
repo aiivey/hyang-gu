@@ -59,108 +59,95 @@ body.p-km { --accent: var(--cyan) }
     </div>
 
     <div class="finder">
-      <svg viewBox="0 0 600 520" role="img" aria-label="Top-down view of the KM/A-77 fighter aircraft, showing a sleek delta-wing configuration with angular fuselage">
+      <svg viewBox="0 0 600 520" role="img" aria-label="Side-profile silhouette of the KM/A-77 fighter aircraft, showing a tapered fuselage, bubble canopy, swept wing and twin canted tail fins">
         <defs>
-          <filter id="glow">
-            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-          <linearGradient id="fuselageGrad" x1="0%" y1="0%" x2="100%">
-            <stop offset="0%" style="stop-color:#0A1820;stop-opacity:1" />
-            <stop offset="50%" style="stop-color:#10272F;stop-opacity:1" />
-            <stop offset="100%" style="stop-color:#0A1820;stop-opacity:1" />
+          <linearGradient id="hullGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" stop-color="#16333C"/>
+            <stop offset="100%" stop-color="#0A1820"/>
           </linearGradient>
         </defs>
         <rect class="f-bg" width="600" height="520" fill="#E6ECEE"/>
-        
-        <!-- Reference circles -->
-        <g class="f-soft" fill="none" stroke="#9DB5BC" stroke-width="1.4" opacity="0.5">
-          <circle cx="300" cy="260" r="100"/><circle cx="300" cy="260" r="180"/>
+
+        <!-- ground shadow -->
+        <ellipse cx="300" cy="400" rx="220" ry="10" fill="#9DB5BC" opacity="0.3"/>
+
+        <!-- horizontal reference lines -->
+        <g stroke="#9DB5BC" stroke-width="1" opacity="0.35">
+          <line x1="60" y1="260" x2="540" y2="260"/>
         </g>
 
-        <!-- Main fuselage (trapezoidal, blended) -->
-        <path d="M300,80 L340,140 L360,220 L370,280 L360,340 L340,400 L300,420 L260,400 L240,340 L230,280 L240,220 L260,140 Z" fill="url(#fuselageGrad)" stroke="#0A1820" stroke-width="0.5"/>
+        <!-- far tail fin (offset back, slightly smaller, suggests canted twin tail) -->
+        <path d="M418,252 L452,176 L470,180 L442,254 Z" fill="#10272F" opacity="0.65"/>
 
-        <!-- Canopy (small, integrated) -->
-        <ellipse cx="300" cy="140" rx="18" ry="22" fill="#1B7A9E" filter="url(#glow)"/>
-        <path d="M290,155 Q300,162 310,155" fill="none" stroke="#5AB3D4" stroke-width="1" opacity="0.6"/>
+        <!-- far horizontal stabilizer -->
+        <path d="M430,268 L478,290 L476,300 L428,280 Z" fill="#10272F" opacity="0.65"/>
 
-        <!-- Port delta wing (swept, angular) -->
-        <path d="M260,140 L140,220 L100,320 L140,360 L240,280 L260,200 Z" fill="#10272F" stroke="#1B7A9E" stroke-width="1.5" opacity="0.8"/>
-        
-        <!-- Starboard delta wing (swept, angular) -->
-        <path d="M340,140 L460,220 L500,320 L460,360 L360,280 L340,200 Z" fill="#10272F" stroke="#1B7A9E" stroke-width="1.5" opacity="0.8"/>
+        <!-- main wing (swept, low-mounted) -->
+        <path d="M232,272 L320,278 L352,338 L322,344 L250,300 Z" fill="url(#hullGrad)" stroke="#1B7A9E" stroke-width="1.5" opacity="0.92"/>
+        <line x1="260" y1="286" x2="330" y2="330" stroke="#1B7A9E" stroke-width="1" opacity="0.5"/>
 
-        <!-- Wing leading edge chines -->
-        <line x1="140" y1="220" x2="240" y2="240" stroke="#1B7A9E" stroke-width="1.5" opacity="0.6"/>
-        <line x1="460" y1="220" x2="360" y2="240" stroke="#1B7A9E" stroke-width="1.5" opacity="0.6"/>
+        <!-- main fuselage silhouette -->
+        <path d="M70,262
+                 C 90,250 118,238 142,232
+                 C 150,218 162,206 178,200
+                 C 194,206 204,218 210,230
+                 C 244,228 286,230 330,236
+                 C 372,241 406,246 432,251
+                 C 462,255 492,258 518,261
+                 C 492,264 462,267 432,271
+                 C 406,276 372,281 330,286
+                 C 286,292 244,294 210,292
+                 C 200,300 188,308 172,312
+                 C 150,306 134,296 122,284
+                 C 104,278 86,271 70,262 Z"
+              fill="url(#hullGrad)" stroke="#0A1820" stroke-width="1"/>
 
-        <!-- Port canard (small leading edge) -->
-        <path d="M280,180 L200,210 L210,240 L290,215 Z" fill="#1B7A9E" opacity="0.7"/>
-        
-        <!-- Starboard canard (small leading edge) -->
-        <path d="M320,180 L400,210 L390,240 L310,215 Z" fill="#1B7A9E" opacity="0.7"/>
+        <!-- canopy -->
+        <path d="M150,222 C 160,206 172,198 180,197 C 190,198 202,207 210,224 C 198,230 184,232 172,231 C 164,230 156,227 150,222 Z"
+              fill="#1B7A9E" opacity="0.85"/>
+        <path d="M156,221 C 164,210 173,203 180,203 C 188,203 198,210 205,221" fill="none" stroke="#5AB3D4" stroke-width="1" opacity="0.7"/>
 
-        <!-- Main weapons bays (internal, outlined) -->
-        <rect x="285" y="220" width="30" height="45" fill="none" stroke="#3C555D" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.6" rx="2"/>
-        <line x1="300" y1="220" x2="300" y2="265" stroke="#3C555D" stroke-width="0.5" opacity="0.4"/>
+        <!-- caret intake -->
+        <path d="M172,246 L212,240 L216,260 L178,266 Z" fill="#3C555D" opacity="0.85"/>
 
-        <!-- Side weapons pylons (under wings) -->
-        <circle cx="180" cy="270" r="5" fill="#E8A13A" opacity="0.7"/>
-        <circle cx="420" cy="270" r="5" fill="#E8A13A" opacity="0.7"/>
+        <!-- nose pitot boom -->
+        <line x1="70" y1="262" x2="46" y2="262" stroke="#3C555D" stroke-width="2" stroke-linecap="round"/>
 
-        <!-- Twin engine inlets (port) -->
-        <path d="M260,200 L245,210 L250,225 L265,220 Z" fill="#3C555D" opacity="0.8"/>
-        
-        <!-- Twin engine inlets (starboard) -->
-        <path d="M340,200 L355,210 L350,225 L335,220 Z" fill="#3C555D" opacity="0.8"/>
+        <!-- near horizontal stabilizer -->
+        <path d="M424,262 L474,284 L470,296 L420,274 Z" fill="#10272F" stroke="#1B7A9E" stroke-width="1" opacity="0.95"/>
 
-        <!-- Engine exhaust nozzles (port/starboard) -->
-        <path d="M250,380 L235,400 L245,410 L260,395 Z" fill="#1B7A9E"/>
-        <path d="M350,380 L365,400 L355,410 L340,395 Z" fill="#1B7A9E"/>
-        
-        <!-- Exhaust afterburner glow -->
-        <path d="M250,395 L240,415" stroke="#E8A13A" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
-        <path d="M350,395 L360,415" stroke="#E8A13A" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
+        <!-- near tail fin (canted) -->
+        <path d="M410,258 L446,182 L466,187 L434,260 Z" fill="#10272F" stroke="#1B7A9E" stroke-width="1.5"/>
+        <path d="M424,230 L448,196" stroke="#5AB3D4" stroke-width="1" opacity="0.5"/>
 
-        <!-- Fuselage chine lines (stealth faceting) -->
-        <line x1="290" y1="140" x2="280" y2="400" stroke="#1B7A9E" stroke-width="1" opacity="0.3"/>
-        <line x1="310" y1="140" x2="320" y2="400" stroke="#1B7A9E" stroke-width="1" opacity="0.3"/>
+        <!-- tail roundel -->
+        <circle cx="438" cy="222" r="9" fill="none" stroke="#1B7A9E" stroke-width="1.5"/>
+        <circle cx="438" cy="222" r="4" fill="#1B7A9E"/>
 
-        <!-- Leading edge root extension (LERX) -->
-        <path d="M280,180 L300,200 L320,180 L310,170 L290,170 Z" fill="#1B7A9E" opacity="0.5"/>
+        <!-- exhaust nozzle -->
+        <ellipse cx="520" cy="261" rx="9" ry="7" fill="#0A1820" stroke="#1B7A9E" stroke-width="1.5"/>
+        <path d="M524,261 L545,261" stroke="#E8A13A" stroke-width="2.5" opacity="0.55" stroke-linecap="round"/>
 
-        <!-- Tail fins (twin vertical stabilizers) -->
-        <path d="M270,390 L260,410 L275,415 Z" fill="#1B7A9E"/>
-        <path d="M330,390 L340,410 L325,415 Z" fill="#1B7A9E"/>
+        <!-- panel lines -->
+        <g stroke="#1B7A9E" stroke-width="0.75" opacity="0.4">
+          <line x1="220" y1="233" x2="400" y2="247"/>
+          <line x1="220" y1="288" x2="400" y2="275"/>
+          <line x1="240" y1="240" x2="250" y2="280"/>
+        </g>
 
-        <!-- Airbrake detail (aft fuselage) -->
-        <rect x="295" y="350" width="10" height="20" fill="none" stroke="#1B7A9E" stroke-width="1" opacity="0.5"/>
+        <!-- weapon pylon marks under wing -->
+        <circle cx="270" cy="300" r="3.5" fill="#E8A13A" opacity="0.75"/>
+        <circle cx="305" cy="312" r="3.5" fill="#E8A13A" opacity="0.75"/>
 
-        <!-- Nose probe (air intake) -->
-        <circle cx="300" cy="85" r="4" fill="#3C555D"/>
-        <path d="M300,85 L298,75 M300,85 L302,75" stroke="#3C555D" stroke-width="1" opacity="0.6"/>
-
-        <!-- Navigation lights -->
-        <circle cx="140" cy="220" r="3" fill="#E8A13A" opacity="0.6"/>
-        <circle cx="460" cy="220" r="3" fill="#E8A13A" opacity="0.6"/>
-
-        <!-- Wingtip missile rails (small) -->
-        <line x1="100" y1="320" x2="95" y2="335" stroke="#1B7A9E" stroke-width="1.5" opacity="0.6"/>
-        <line x1="500" y1="320" x2="505" y2="335" stroke="#1B7A9E" stroke-width="1.5" opacity="0.6"/>
-
-        <!-- Labels and indicators -->
+        <!-- corner brackets and labels (site pattern) -->
         <g class="f-brackets" fill="none" stroke="#10272F" stroke-width="3" stroke-linecap="square">
           <path d="M28,66 V28 H66"/><path d="M534,28 H572 V66"/>
           <path d="M28,454 V492 H66"/><path d="M572,454 V492 H534"/>
         </g>
         <text x="46" y="96" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Fighter</text>
         <text x="554" y="96" text-anchor="end" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Twin-engine</text>
-        <circle class="f-amber" cx="52" cy="466" r="5" fill="#E8A13A"/>
-        <text x="66" y="471" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Stealth design</text>
+        <circle cx="52" cy="466" r="5" fill="#E8A13A"/>
+        <text x="66" y="471" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Stealth shaping</text>
         <text x="554" y="471" text-anchor="end" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Advanced fighter</text>
       </svg>
     </div>
@@ -242,4 +229,30 @@ body.p-km { --accent: var(--cyan) }
           <tr><th scope="row">Platform type</th><td class="us">Crewed fighter aircraft</td><td>Remotely operated or autonomous</td></tr>
           <tr><th scope="row">Endurance</th><td class="us">Hours, with aerial refueling</td><td>Hours to days depending on type</td></tr>
           <tr><th scope="row">Crew requirements</th><td class="us">Pilot + weapons officer</td><td>Ground operator team</td></tr>
-          <tr><th scope="row">Development status</th><td class="us">Active
+          <tr><th scope="row">Development status</th><td class="us">Active development</td><td>Fielded platforms in operation</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="after">The KM/A-77 complements the HG-12 Yǎnshí reconnaissance platform and HG-21 Fēngyǔ attack UAV within integrated Hyang Gu air operations.</p>
+    <div class="actions"><a class="btn line" href="index.html">Back to HGNI</a></div>
+  </div>
+</section>
+
+<section class="mottos single-motto" aria-label="Platform motto">
+  <div class="wrap">
+    <div><q>Swift. Reliable. Always ready.</q></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>The KM/A-77 is a fictional fighter aircraft from the Hyang Gu setting and is not a real product.</p>
+    <p><a href="index.html">Home</a> · <a href="hg-12.html">HG-12</a> · <a href="hg-21.html">HG-21</a></p>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
+</body>
+</html>
