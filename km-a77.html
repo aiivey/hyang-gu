@@ -1,500 +1,244 @@
-```html
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The fictional KM/A-77 HEL long-range multirole fighter from Hyang Gu National Industries.">
-  <title>KM/A-77 HEL | HGNI</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <script src="assets/site.js" defer></script>
-
-  <style>
-    /* Aircraft showcase */
-    .hel-showcase {
-      overflow: hidden;
-    }
-
-    .hel-heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-      flex-wrap: wrap;
-      margin: 1.5rem 0;
-    }
-
-    .hel-status {
-      border: 1px solid rgba(75,217,238,.5);
-      color: #8deeff;
-      padding: .45rem .7rem;
-      font-size: .7rem;
-      letter-spacing: .14em;
-    }
-
-    .hel-display {
-      position: relative;
-      overflow: hidden;
-      min-height: 350px;
-      border: 1px solid rgba(92,193,211,.24);
-      background:
-        radial-gradient(ellipse at 50% 48%, rgba(23,105,130,.24), transparent 60%),
-        linear-gradient(145deg, #101d29, #071019 72%);
-    }
-
-    .hel-grid {
-      position: absolute;
-      inset: 0;
-      opacity: .24;
-      background-image:
-        linear-gradient(rgba(92,193,211,.2) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(92,193,211,.2) 1px, transparent 1px);
-      background-size: 32px 32px;
-    }
-
-    .hel-aircraft {
-      display: block;
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      height: auto;
-      min-height: 300px;
-    }
-
-    .hel-label {
-      position: absolute;
-      z-index: 2;
-      display: flex;
-      gap: .65rem;
-      flex-wrap: wrap;
-      color: #8deeff;
-      font-size: .65rem;
-      letter-spacing: .13em;
-    }
-
-    .hel-label-left {
-      left: 1rem;
-      top: 1rem;
-      flex-direction: column;
-    }
-
-    .hel-label-left strong {
-      font-size: 1rem;
-      letter-spacing: .08em;
-    }
-
-    .hel-label-bottom {
-      bottom: .85rem;
-      left: 1rem;
-      right: 1rem;
-      justify-content: space-between;
-      color: #91aab8;
-    }
-
-    .hel-facts {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1px;
-      margin-top: 1.5rem;
-      border: 1px solid rgba(128,160,175,.25);
-      background: rgba(128,160,175,.2);
-    }
-
-    .hel-fact {
-      padding: 1rem;
-      background: var(--page, #0b1219);
-    }
-
-    .hel-fact span {
-      display: block;
-      margin-bottom: .4rem;
-      font-size: .7rem;
-      opacity: .7;
-      letter-spacing: .1em;
-      text-transform: uppercase;
-    }
-
-    .hel-fact strong {
-      font-size: .95rem;
-    }
-
-    .hel-note {
-      padding: 1rem;
-      border-left: 2px solid #42c7dc;
-      background: rgba(66,199,220,.07);
-    }
-
-    .hel-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .55rem;
-      margin: 1rem 0;
-    }
-
-    .hel-tags span {
-      padding: .45rem .7rem;
-      border: 1px solid rgba(128,160,175,.3);
-      font-size: .8rem;
-    }
-
-    @media (max-width: 600px) {
-      .hel-display {
-        min-height: 260px;
-      }
-
-      .hel-aircraft {
-        min-height: 240px;
-      }
-
-      .hel-facts {
-        grid-template-columns: 1fr;
-      }
-
-      .hel-label-bottom {
-        font-size: .55rem;
-      }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KM/A-77 | HGNI</title>
+<meta name="description" content="The KM/A-77 is HGNI's advanced fighter aircraft. A fictional platform.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wdth,wght@12..96,75..100,200..800&family=Figtree:wght@400;500;600&family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+<style>
+body.p-km { --accent: var(--cyan) }
+:root {
+  --cyan: #1B7A9E;
+  --cyan-dark: #5AB3D4;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --cyan: #5AB3D4;
+  }
+}
+:root[data-theme="dark"] {
+  --cyan: #5AB3D4;
+}
+.fleet li:nth-child(4) { --c: var(--cyan) }
+.compare .th-km { border-bottom-color: var(--cyan) }
+</style>
 </head>
+<body class="p-km">
+<a class="skip" href="#main">Skip to content</a>
 
-<body>
-  <header class="nav">
-    <div class="wrap">
-      <a class="mark" href="index.html">HGNI</a>
-      <nav aria-label="Main">
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="hg-12.html">HG-12</a></li>
-          <li><a href="hg-21.html">HG-21</a></li>
-          <li><a href="km-a77.html" aria-current="page">KM/A-77</a></li>
-        </ul>
-      </nav>
+<header class="nav">
+  <div class="wrap">
+    <a class="mark" href="index.html">HGNI</a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="hg-12.html">HG-12</a></li>
+        <li><a href="hg-21.html">HG-21</a></li>
+        <li><a href="km-a77.html" aria-current="page">KM/A-77</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" aria-labelledby="title">
+  <div class="wrap">
+    <div>
+      <h1 id="title">KM/A-77</h1>
+      <p class="lede">A domestically developed advanced fighter aircraft.</p>
+      <p class="designation">Hyang Gu National Industry tactical fighter platform</p>
+      <div class="actions">
+        <a class="btn solid" href="#specs">Specifications</a>
+        <a class="btn line" href="#design">Design overview</a>
+      </div>
     </div>
-  </header>
 
-  <main>
-    <section class="hero hel-showcase">
-      <div class="wrap">
-        <p class="eyebrow">HGNI / CREWED AVIATION</p>
+    <div class="finder">
+      <svg viewBox="0 0 600 520" role="img" aria-label="Top-down view of the KM/A-77 fighter aircraft, showing swept wings, fuselage, and canopy">
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <rect class="f-bg" width="600" height="520" fill="#E6ECEE"/>
+        <g class="f-soft" fill="none" stroke="#9DB5BC" stroke-width="1.4">
+          <circle cx="300" cy="260" r="80"/><circle cx="300" cy="260" r="160"/>
+        </g>
 
-        <div class="hel-heading">
-          <div>
-            <h1>KM/A-77 <span>HEL</span></h1>
-            <p class="lede">
-              Long-range multirole fighter.
-            </p>
-          </div>
-          <span class="hel-status">DESIGN CONCEPT</span>
-        </div>
+        <!-- Fuselage -->
+        <ellipse class="f-body" cx="300" cy="260" rx="32" ry="100" fill="#10272F"/>
 
-        <div class="hel-display">
-          <div class="hel-grid"></div>
+        <!-- Canopy -->
+        <ellipse class="f-accent" cx="300" cy="190" rx="24" ry="16" fill="#1B7A9E" filter="url(#glow)"/>
+        <path d="M285,190 Q300,198 315,190" fill="none" stroke="#5AB3D4" stroke-width="1.5" opacity="0.6"/>
 
-          <svg class="hel-aircraft"
-               viewBox="0 0 900 480"
-               xmlns="http://www.w3.org/2000/svg"
-               role="img"
-               aria-label="Stylized three-dimensional concept illustration of the fictional KM/A-77 HEL fighter">
+        <!-- Swept wings -->
+        <path class="f-body" d="M300,240 L210,200 L180,210 L200,260 L180,310 L210,320 L300,280 Z" fill="#10272F"/>
+        <path class="f-body" d="M300,240 L390,200 L420,210 L400,260 L420,310 L390,320 L300,280 Z" fill="#10272F"/>
 
-            <defs>
-              <linearGradient id="hel-body" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#e0edf2"/>
-                <stop offset="30%" stop-color="#899fab"/>
-                <stop offset="65%" stop-color="#354a59"/>
-                <stop offset="100%" stop-color="#111d29"/>
-              </linearGradient>
+        <!-- Wing control surfaces -->
+        <line x1="215" y1="250" x2="195" y2="270" stroke="#1B7A9E" stroke-width="2"/>
+        <line x1="385" y1="250" x2="405" y2="270" stroke="#1B7A9E" stroke-width="2"/>
 
-              <linearGradient id="hel-wing" x1="0" y1="0" x2=".8" y2="1">
-                <stop offset="0%" stop-color="#c2d3db"/>
-                <stop offset="45%" stop-color="#607887"/>
-                <stop offset="100%" stop-color="#192b38"/>
-              </linearGradient>
+        <!-- Wingtip markers -->
+        <circle cx="180" cy="210" r="6" fill="#1B7A9E"/>
+        <circle cx="420" cy="210" r="6" fill="#1B7A9E"/>
 
-              <linearGradient id="hel-glass" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#c4fbff"/>
-                <stop offset="40%" stop-color="#398ca9"/>
-                <stop offset="100%" stop-color="#142d45"/>
-              </linearGradient>
+        <!-- Air intake (belly) -->
+        <rect x="285" y="310" width="30" height="18" rx="2" fill="#3C555D" opacity="0.7"/>
 
-              <filter id="hel-glow">
-                <feGaussianBlur stdDeviation="8"/>
-              </filter>
-            </defs>
+        <!-- Engine exhaust -->
+        <rect x="290" y="355" width="20" height="28" rx="2" fill="#1B7A9E"/>
+        <path d="M290,383 L285,395 M310,383 L315,395" stroke="#E8A13A" stroke-width="2" opacity="0.6"/>
 
-            <!-- Background glow -->
-            <ellipse cx="450" cy="255" rx="265" ry="100"
-                     fill="#16b8d4" opacity=".13" filter="url(#hel-glow)"/>
+        <!-- Landing gear wells (detail) -->
+        <line x1="298" y1="330" x2="298" y2="345" stroke="#3C555D" stroke-width="1.5"/>
+        <line x1="302" y1="330" x2="302" y2="345" stroke="#3C555D" stroke-width="1.5"/>
 
-            <!-- Rear stabilizers -->
-            <path d="M405 264 L285 345 L350 337 L440 281 Z"
-                  fill="#263e4d" stroke="#91aab8" stroke-width="2"/>
-            <path d="M495 264 L615 345 L550 337 L460 281 Z"
-                  fill="#263e4d" stroke="#91aab8" stroke-width="2"/>
+        <!-- Weapon hardpoints under wings -->
+        <circle cx="230" cy="270" r="4" fill="#E8A13A" opacity="0.7"/>
+        <circle cx="370" cy="270" r="4" fill="#E8A13A" opacity="0.7"/>
+        <circle cx="210" cy="290" r="4" fill="#E8A13A" opacity="0.7"/>
+        <circle cx="390" cy="290" r="4" fill="#E8A13A" opacity="0.7"/>
 
-            <!-- Main swept wings -->
-            <path d="M420 205 L150 316 L294 326 L442 278 Z"
-                  fill="url(#hel-wing)" stroke="#b5cbd5" stroke-width="2"/>
-            <path d="M480 205 L750 316 L606 326 L458 278 Z"
-                  fill="url(#hel-wing)" stroke="#b5cbd5" stroke-width="2"/>
+        <!-- Tail fin -->
+        <path class="f-body" d="M300,360 L290,380 L310,380 Z" fill="#10272F"/>
+        <line x1="295" y1="370" x2="305" y2="370" stroke="#1B7A9E" stroke-width="1" opacity="0.5"/>
 
-            <!-- Wing panel detail -->
-            <path d="M410 230 L230 302 M490 230 L670 302"
-                  fill="none" stroke="#172c39" stroke-width="3"/>
-            <path d="M345 270 L292 312 M555 270 L608 312"
-                  fill="none" stroke="#d0e0e7" stroke-width="1.5" opacity=".7"/>
+        <!-- Center fuselage chine lines -->
+        <line x1="290" y1="200" x2="290" y2="360" stroke="#1B7A9E" stroke-width="1" opacity="0.4"/>
+        <line x1="310" y1="200" x2="310" y2="360" stroke="#1B7A9E" stroke-width="1" opacity="0.4"/>
 
-            <!-- Twin tail fins -->
-            <path d="M392 232 L350 156 L390 174 L425 235 Z"
-                  fill="#526d7c" stroke="#a9c0cb" stroke-width="2"/>
-            <path d="M508 232 L550 156 L510 174 L475 235 Z"
-                  fill="#526d7c" stroke="#a9c0cb" stroke-width="2"/>
+        <!-- Cockpit detail -->
+        <rect x="297" y="175" width="6" height="8" fill="#5AB3D4" opacity="0.8"/>
 
-            <!-- Main fuselage -->
-            <path d="M450 72
-                     L469 112
-                     L491 178
-                     L519 246
-                     L484 285
-                     L450 307
-                     L416 285
-                     L381 246
-                     L409 178
-                     L431 112 Z"
-                  fill="url(#hel-body)"
-                  stroke="#d0e0e7"
-                  stroke-width="2.5"/>
+        <!-- Navigation lights (port/starboard) -->
+        <circle cx="175" cy="215" r="3" fill="#E8A13A" opacity="0.6"/>
+        <circle cx="425" cy="215" r="3" fill="#E8A13A" opacity="0.6"/>
 
-            <!-- Fuselage facets -->
-            <path d="M450 74 L450 305 L416 285 L409 178 L431 112 Z"
-                  fill="#e0edf2" opacity=".18"/>
-            <path d="M450 74 L469 112 L491 178 L484 285 L450 305 Z"
-                  fill="#071723" opacity=".4"/>
-
-            <!-- Cockpit canopy -->
-            <path d="M450 116 L470 150 L462 179 L450 188 L438 179 L430 150 Z"
-                  fill="url(#hel-glass)"
-                  stroke="#b8f5ff"
-                  stroke-width="2"/>
-            <path d="M450 123 L450 184"
-                  stroke="#c8faff" stroke-width="1.5" opacity=".8"/>
-
-            <!-- Intakes -->
-            <path d="M397 192 L416 210 L407 238 L388 228 Z"
-                  fill="#101e28" stroke="#9ab2be" stroke-width="1.5"/>
-            <path d="M503 192 L484 210 L493 238 L512 228 Z"
-                  fill="#101e28" stroke="#9ab2be" stroke-width="1.5"/>
-
-            <!-- Fuselage highlights -->
-            <path d="M450 74 L450 115 M450 190 L450 273"
-                  stroke="#e5fbff" stroke-width="2" opacity=".75"/>
-            <path d="M418 248 L450 273 L482 248"
-                  fill="none" stroke="#7edbe9" stroke-width="2"/>
-
-            <!-- Navigation lights -->
-            <circle cx="168" cy="309" r="5" fill="#51f4ff"/>
-            <circle cx="732" cy="309" r="5" fill="#51f4ff"/>
-            <circle cx="168" cy="309" r="12" fill="#51f4ff" opacity=".18"/>
-            <circle cx="732" cy="309" r="12" fill="#51f4ff" opacity=".18"/>
-
-            <!-- Technical callouts -->
-            <path d="M470 145 L590 96 L675 96"
-                  fill="none" stroke="#4bd9ee" stroke-width="1.5"/>
-            <circle cx="470" cy="145" r="3" fill="#4bd9ee"/>
-            <text x="684" y="91" fill="#8deeff" font-size="12"
-                  font-family="Arial, sans-serif" letter-spacing="2">COCKPIT</text>
-            <text x="684" y="109" fill="#829ca9" font-size="10"
-                  font-family="Arial, sans-serif">DIGITAL FLIGHT DECK</text>
-
-            <path d="M605 307 L674 358 L760 358"
-                  fill="none" stroke="#4bd9ee" stroke-width="1.5"/>
-            <circle cx="605" cy="307" r="3" fill="#4bd9ee"/>
-            <text x="683" y="347" fill="#8deeff" font-size="12"
-                  font-family="Arial, sans-serif" letter-spacing="2">AIRFRAME</text>
-            <text x="683" y="374" fill="#829ca9" font-size="10"
-                  font-family="Arial, sans-serif">MULTIROLE PLATFORM</text>
-          </svg>
-
-          <div class="hel-label hel-label-left">
-            <span>PROJECT</span>
-            <strong>KM/A-77</strong>
-          </div>
-
-          <div class="hel-label hel-label-bottom">
-            <span>HGNI · HEL</span>
-            <span>FICTIONAL CONCEPT VISUALIZATION</span>
-          </div>
-        </div>
-
-        <p class="designation">
-          A fictional advanced aviation program by Hyang Gu National Industries.
-        </p>
-      </div>
-    </section>
-
-    <section class="overview" id="overview">
-      <div class="wrap">
-        <h2>Aircraft overview</h2>
-        <div class="text">
-          <p class="lede">
-            The KM/A-77 HEL represents Hyang Gu's ambition to establish
-            an advanced domestic crewed-aircraft industry.
-          </p>
-          <p>
-            Envisioned as a long-range multirole fighter, the HEL is intended
-            to support air defence, patrol, and other fictional air-force
-            missions. Its program emphasizes maintainability, pilot awareness,
-            and long-term domestic aerospace expertise.
-          </p>
-          <p>
-            Development is planned as a gradual process, building engineering
-            skills and industrial capacity while using carefully managed
-            international partnerships where appropriate.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="overview">
-      <div class="wrap">
-        <h2>At a glance</h2>
-
-        <div class="hel-facts">
-          <div class="hel-fact">
-            <span>Designation</span>
-            <strong>KM/A-77</strong>
-          </div>
-          <div class="hel-fact">
-            <span>Aircraft name</span>
-            <strong>HEL</strong>
-          </div>
-          <div class="hel-fact">
-            <span>Manufacturer</span>
-            <strong>HGNI</strong>
-          </div>
-          <div class="hel-fact">
-            <span>Category</span>
-            <strong>Crewed fighter</strong>
-          </div>
-          <div class="hel-fact">
-            <span>Mission class</span>
-            <strong>Multirole</strong>
-          </div>
-          <div class="hel-fact">
-            <span>Program stage</span>
-            <strong>Design concept</strong>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="overview">
-      <div class="wrap">
-        <h2>Design philosophy</h2>
-        <div class="text">
-          <h3>Airframe and maintainability</h3>
-          <p>
-            The HEL concept prioritizes a durable airframe, accessible
-            maintenance systems, and modular components intended to simplify
-            long-term support.
-          </p>
-
-          <h3>Flight systems</h3>
-          <p>
-            The fictional aircraft is envisioned with modern digital flight
-            controls, integrated cockpit displays, and systems intended to
-            help manage pilot workload.
-          </p>
-
-          <h3>Avionics and awareness</h3>
-          <p>
-            Its proposed avionics suite brings navigation, communications,
-            sensor information, and aircraft-health monitoring together
-            through a unified cockpit interface.
-          </p>
-
-          <h3>Domestic industry</h3>
-          <p>
-            A major goal is to develop local engineering expertise,
-            component production, software support, quality assurance,
-            and aircraft maintenance capabilities.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="overview">
-      <div class="wrap">
-        <h2>Development roadmap</h2>
-        <div class="text">
-          <p>
-            <strong>Phase I — Research:</strong>
-            Establish the engineering team, define program requirements,
-            and develop a preliminary design.
-          </p>
-          <p>
-            <strong>Phase II — Demonstration:</strong>
-            Assess the concept through staged design reviews and
-            fictional test milestones.
-          </p>
-          <p>
-            <strong>Phase III — Industrial readiness:</strong>
-            Establish testing, quality-control, technician training,
-            and maintenance infrastructure.
-          </p>
-          <p>
-            <strong>Phase IV — Production planning:</strong>
-            Review reliability, cost, and manufacturing readiness
-            before considering any production decision.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section class="overview">
-      <div class="wrap">
-        <h2>Program priorities</h2>
-        <div class="text">
-          <p>
-            The KM/A-77 is intended to strengthen Hyang Gu's aerospace
-            industry beyond a single aircraft project.
-          </p>
-
-          <div class="hel-tags">
-            <span>Domestic engineering</span>
-            <span>Technical training</span>
-            <span>Industrial growth</span>
-            <span>Maintainability</span>
-            <span>Cost management</span>
-            <span>International partnerships</span>
-          </div>
-
-          <div class="hel-note">
-            <strong>Program objective</strong>
-            <p>
-              Build a sustainable domestic aviation capability through
-              staged research, workforce development, and industrial
-              investment.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap">
-      <p>
-        Hyang Gu is a fictional country. The KM/A-77 HEL and its
-        development program are fictional.
-      </p>
-      <p>
-        <a href="index.html">Home</a> ·
-        <a href="hg-12.html">HG-12</a> ·
-        <a href="hg-21.html">HG-21</a> ·
-        <a href="km-a77.html">KM/A-77 HEL</a>
-      </p>
+        <!-- Labels and indicators -->
+        <g class="f-brackets" fill="none" stroke="#10272F" stroke-width="3" stroke-linecap="square">
+          <path d="M28,66 V28 H66"/><path d="M534,28 H572 V66"/>
+          <path d="M28,454 V492 H66"/><path d="M572,454 V492 H534"/>
+        </g>
+        <text x="46" y="96" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Fighter</text>
+        <text x="554" y="96" text-anchor="end" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Twin-engine</text>
+        <circle class="f-amber" cx="52" cy="466" r="5" fill="#E8A13A"/>
+        <text x="66" y="471" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Swept wings</text>
+        <text x="554" y="471" text-anchor="end" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Tactical air combat</text>
+      </svg>
     </div>
-  </footer>
+  </div>
+</section>
+
+<section class="overview" id="overview">
+  <div class="wrap">
+    <h2>Advanced tactical capability.</h2>
+    <div class="text">
+      <p class="lede">The KM/A-77 is HGNI's domestically developed fighter aircraft for air defense and tactical operations.</p>
+      <p>The aircraft represents Hyang Gu's investment in modern fighter capability. It is built around a twin-engine configuration with swept wings for efficient transonic performance, a modern avionics suite, and multiple hardpoints for tactical payload flexibility.</p>
+      <p>The KM/A-77 complements Hyang Gu's unmanned and directed-defense platforms, providing crewed capability for air-to-air intercept, close air support, and homeland defense missions.</p>
+    </div>
+  </div>
+</section>
+
+<section class="specs" id="specs">
+  <div class="wrap">
+    <h2>Technical profile.</h2>
+    <dl class="spec-list">
+      <div><dt>Designation</dt><dd>KM/A-77</dd></div>
+      <div><dt>Classification</dt><dd>Twin-engine tactical fighter aircraft</dd></div>
+      <div><dt>Primary role</dt><dd>Air defense, air-to-air combat, tactical support</dd></div>
+      <div><dt>Manufacturer</dt><dd>Hyang Gu National Industry (HGNI)</dd></div>
+      <div><dt>Airframe type</dt><dd>Swept-wing monoplane</dd></div>
+      <div><dt>Powerplant</dt><dd>Twin turbofan engines</dd></div>
+      <div><dt>Crew</dt><dd>Pilot + Weapon Systems Officer</dd></div>
+      <div><dt>Avionics</dt><dd>Integrated air search and fire-control radar</dd></div>
+      <div><dt>Hardpoints</dt><dd>Multiple under-wing and fuselage stations</dd></div>
+      <div><dt>Operational status</dt><dd>In development and testing</dd></div>
+    </dl>
+    <p class="fine">Specifications are preliminary for the Hyang Gu setting and not verified aircraft performance.</p>
+  </div>
+</section>
+
+<section class="production" id="design">
+  <div class="wrap">
+    <h2>Design priorities.</h2>
+    <div class="prod-cols">
+      <div>
+        <h3>Efficient aerodynamics</h3>
+        <p>Swept-wing geometry and twin-engine layout optimize transonic cruise and acceleration performance while maintaining reasonable field-length requirements.</p>
+      </div>
+      <div>
+        <h3>Payload flexibility</h3>
+        <p>Multiple hardpoints and a modern avionics bus allow rapid configuration changes for different tactical missions without extensive ground conversion.</p>
+      </div>
+      <div>
+        <h3>Domestic integration</h3>
+        <p>Design modularity and use of standardized subsystems support long-term sustainment and domestic upgrade paths as technology matures.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="capability">
+  <div class="wrap">
+    <h2>Operational roles.</h2>
+    <p class="lede" style="margin-bottom:28px">The KM/A-77 is designed to support multiple operational profiles within Hyang Gu's air defense and tactical framework.</p>
+
+    <div class="chain" role="group" aria-label="Mission roles">
+      <div class="node"><strong>Air intercept</strong><span>Detection, engagement and neutralization of airborne threats</span></div>
+      <div class="node"><strong>Close support</strong><span>Tactical air-to-ground operations in support of ground forces</span></div>
+      <div class="node"><strong>Homeland defense</strong><span>Rapid-response capability for airspace sovereignty and protection</span></div>
+    </div>
+    <p class="chain-note">Operational employment depends on training, basing infrastructure and integration with broader air defense architecture.</p>
+  </div>
+</section>
+
+<section class="compare">
+  <div class="wrap">
+    <h2>In Hyang Gu's air force structure.</h2>
+    <p class="lede" style="margin-top:20px">The KM/A-77 represents crewed fighter capability alongside unmanned platforms and homeland defense systems.</p>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th scope="col"></th><th scope="col" class="th-km">KM/A-77</th><th scope="col">Unmanned systems</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Platform type</th><td class="us">Crewed fighter aircraft</td><td>Remotely operated or autonomous</td></tr>
+          <tr><th scope="row">Endurance</th><td class="us">Hours, with aerial refueling</td><td>Hours to days depending on type</td></tr>
+          <tr><th scope="row">Crew requirements</th><td class="us">Pilot + weapons officer</td><td>Ground operator team</td></tr>
+          <tr><th scope="row">Development status</th><td class="us">Active development</td><td>Fielded platforms in operation</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="after">The KM/A-77 complements the HG-12 Yǎnshí reconnaissance platform and HG-21 Fēngyǔ attack UAV within integrated Hyang Gu air operations.</p>
+    <div class="actions"><a class="btn line" href="index.html">Back to HGNI</a></div>
+  </div>
+</section>
+
+<section class="mottos single-motto" aria-label="Platform motto">
+  <div class="wrap">
+    <div><q>Swift. Reliable. Always ready.</q></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>The KM/A-77 is a fictional fighter aircraft from the Hyang Gu setting and is not a real product.</p>
+    <p><a href="index.html">Home</a> · <a href="hg-12.html">HG-12</a> · <a href="hg-21.html">HG-21</a></p>
+  </div>
+</footer>
+
+<script src="assets/site.js" defer></script>
 </body>
 </html>
-```
