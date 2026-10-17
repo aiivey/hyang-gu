@@ -59,7 +59,7 @@ body.p-km { --accent: var(--cyan) }
     </div>
 
     <div class="finder">
-      <svg viewBox="0 0 600 520" role="img" aria-label="Top-down view of the KM/A-77 fighter aircraft, showing swept wings, fuselage, and canopy">
+      <svg viewBox="0 0 600 520" role="img" aria-label="Top-down view of the KM/A-77 fighter aircraft, showing a sleek delta-wing configuration with angular fuselage">
         <defs>
           <filter id="glow">
             <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
@@ -68,62 +68,89 @@ body.p-km { --accent: var(--cyan) }
               <feMergeNode in="SourceGraphic"/>
             </feMerge>
           </filter>
+          <linearGradient id="fuselageGrad" x1="0%" y1="0%" x2="100%">
+            <stop offset="0%" style="stop-color:#0A1820;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#10272F;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0A1820;stop-opacity:1" />
+          </linearGradient>
         </defs>
         <rect class="f-bg" width="600" height="520" fill="#E6ECEE"/>
-        <g class="f-soft" fill="none" stroke="#9DB5BC" stroke-width="1.4">
-          <circle cx="300" cy="260" r="80"/><circle cx="300" cy="260" r="160"/>
+        
+        <!-- Reference circles -->
+        <g class="f-soft" fill="none" stroke="#9DB5BC" stroke-width="1.4" opacity="0.5">
+          <circle cx="300" cy="260" r="100"/><circle cx="300" cy="260" r="180"/>
         </g>
 
-        <!-- Fuselage -->
-        <ellipse class="f-body" cx="300" cy="260" rx="32" ry="100" fill="#10272F"/>
+        <!-- Main fuselage (trapezoidal, blended) -->
+        <path d="M300,80 L340,140 L360,220 L370,280 L360,340 L340,400 L300,420 L260,400 L240,340 L230,280 L240,220 L260,140 Z" fill="url(#fuselageGrad)" stroke="#0A1820" stroke-width="0.5"/>
 
-        <!-- Canopy -->
-        <ellipse class="f-accent" cx="300" cy="190" rx="24" ry="16" fill="#1B7A9E" filter="url(#glow)"/>
-        <path d="M285,190 Q300,198 315,190" fill="none" stroke="#5AB3D4" stroke-width="1.5" opacity="0.6"/>
+        <!-- Canopy (small, integrated) -->
+        <ellipse cx="300" cy="140" rx="18" ry="22" fill="#1B7A9E" filter="url(#glow)"/>
+        <path d="M290,155 Q300,162 310,155" fill="none" stroke="#5AB3D4" stroke-width="1" opacity="0.6"/>
 
-        <!-- Swept wings -->
-        <path class="f-body" d="M300,240 L210,200 L180,210 L200,260 L180,310 L210,320 L300,280 Z" fill="#10272F"/>
-        <path class="f-body" d="M300,240 L390,200 L420,210 L400,260 L420,310 L390,320 L300,280 Z" fill="#10272F"/>
+        <!-- Port delta wing (swept, angular) -->
+        <path d="M260,140 L140,220 L100,320 L140,360 L240,280 L260,200 Z" fill="#10272F" stroke="#1B7A9E" stroke-width="1.5" opacity="0.8"/>
+        
+        <!-- Starboard delta wing (swept, angular) -->
+        <path d="M340,140 L460,220 L500,320 L460,360 L360,280 L340,200 Z" fill="#10272F" stroke="#1B7A9E" stroke-width="1.5" opacity="0.8"/>
 
-        <!-- Wing control surfaces -->
-        <line x1="215" y1="250" x2="195" y2="270" stroke="#1B7A9E" stroke-width="2"/>
-        <line x1="385" y1="250" x2="405" y2="270" stroke="#1B7A9E" stroke-width="2"/>
+        <!-- Wing leading edge chines -->
+        <line x1="140" y1="220" x2="240" y2="240" stroke="#1B7A9E" stroke-width="1.5" opacity="0.6"/>
+        <line x1="460" y1="220" x2="360" y2="240" stroke="#1B7A9E" stroke-width="1.5" opacity="0.6"/>
 
-        <!-- Wingtip markers -->
-        <circle cx="180" cy="210" r="6" fill="#1B7A9E"/>
-        <circle cx="420" cy="210" r="6" fill="#1B7A9E"/>
+        <!-- Port canard (small leading edge) -->
+        <path d="M280,180 L200,210 L210,240 L290,215 Z" fill="#1B7A9E" opacity="0.7"/>
+        
+        <!-- Starboard canard (small leading edge) -->
+        <path d="M320,180 L400,210 L390,240 L310,215 Z" fill="#1B7A9E" opacity="0.7"/>
 
-        <!-- Air intake (belly) -->
-        <rect x="285" y="310" width="30" height="18" rx="2" fill="#3C555D" opacity="0.7"/>
+        <!-- Main weapons bays (internal, outlined) -->
+        <rect x="285" y="220" width="30" height="45" fill="none" stroke="#3C555D" stroke-width="1.5" stroke-dasharray="4,2" opacity="0.6" rx="2"/>
+        <line x1="300" y1="220" x2="300" y2="265" stroke="#3C555D" stroke-width="0.5" opacity="0.4"/>
 
-        <!-- Engine exhaust -->
-        <rect x="290" y="355" width="20" height="28" rx="2" fill="#1B7A9E"/>
-        <path d="M290,383 L285,395 M310,383 L315,395" stroke="#E8A13A" stroke-width="2" opacity="0.6"/>
+        <!-- Side weapons pylons (under wings) -->
+        <circle cx="180" cy="270" r="5" fill="#E8A13A" opacity="0.7"/>
+        <circle cx="420" cy="270" r="5" fill="#E8A13A" opacity="0.7"/>
 
-        <!-- Landing gear wells (detail) -->
-        <line x1="298" y1="330" x2="298" y2="345" stroke="#3C555D" stroke-width="1.5"/>
-        <line x1="302" y1="330" x2="302" y2="345" stroke="#3C555D" stroke-width="1.5"/>
+        <!-- Twin engine inlets (port) -->
+        <path d="M260,200 L245,210 L250,225 L265,220 Z" fill="#3C555D" opacity="0.8"/>
+        
+        <!-- Twin engine inlets (starboard) -->
+        <path d="M340,200 L355,210 L350,225 L335,220 Z" fill="#3C555D" opacity="0.8"/>
 
-        <!-- Weapon hardpoints under wings -->
-        <circle cx="230" cy="270" r="4" fill="#E8A13A" opacity="0.7"/>
-        <circle cx="370" cy="270" r="4" fill="#E8A13A" opacity="0.7"/>
-        <circle cx="210" cy="290" r="4" fill="#E8A13A" opacity="0.7"/>
-        <circle cx="390" cy="290" r="4" fill="#E8A13A" opacity="0.7"/>
+        <!-- Engine exhaust nozzles (port/starboard) -->
+        <path d="M250,380 L235,400 L245,410 L260,395 Z" fill="#1B7A9E"/>
+        <path d="M350,380 L365,400 L355,410 L340,395 Z" fill="#1B7A9E"/>
+        
+        <!-- Exhaust afterburner glow -->
+        <path d="M250,395 L240,415" stroke="#E8A13A" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
+        <path d="M350,395 L360,415" stroke="#E8A13A" stroke-width="2" opacity="0.5" stroke-linecap="round"/>
 
-        <!-- Tail fin -->
-        <path class="f-body" d="M300,360 L290,380 L310,380 Z" fill="#10272F"/>
-        <line x1="295" y1="370" x2="305" y2="370" stroke="#1B7A9E" stroke-width="1" opacity="0.5"/>
+        <!-- Fuselage chine lines (stealth faceting) -->
+        <line x1="290" y1="140" x2="280" y2="400" stroke="#1B7A9E" stroke-width="1" opacity="0.3"/>
+        <line x1="310" y1="140" x2="320" y2="400" stroke="#1B7A9E" stroke-width="1" opacity="0.3"/>
 
-        <!-- Center fuselage chine lines -->
-        <line x1="290" y1="200" x2="290" y2="360" stroke="#1B7A9E" stroke-width="1" opacity="0.4"/>
-        <line x1="310" y1="200" x2="310" y2="360" stroke="#1B7A9E" stroke-width="1" opacity="0.4"/>
+        <!-- Leading edge root extension (LERX) -->
+        <path d="M280,180 L300,200 L320,180 L310,170 L290,170 Z" fill="#1B7A9E" opacity="0.5"/>
 
-        <!-- Cockpit detail -->
-        <rect x="297" y="175" width="6" height="8" fill="#5AB3D4" opacity="0.8"/>
+        <!-- Tail fins (twin vertical stabilizers) -->
+        <path d="M270,390 L260,410 L275,415 Z" fill="#1B7A9E"/>
+        <path d="M330,390 L340,410 L325,415 Z" fill="#1B7A9E"/>
 
-        <!-- Navigation lights (port/starboard) -->
-        <circle cx="175" cy="215" r="3" fill="#E8A13A" opacity="0.6"/>
-        <circle cx="425" cy="215" r="3" fill="#E8A13A" opacity="0.6"/>
+        <!-- Airbrake detail (aft fuselage) -->
+        <rect x="295" y="350" width="10" height="20" fill="none" stroke="#1B7A9E" stroke-width="1" opacity="0.5"/>
+
+        <!-- Nose probe (air intake) -->
+        <circle cx="300" cy="85" r="4" fill="#3C555D"/>
+        <path d="M300,85 L298,75 M300,85 L302,75" stroke="#3C555D" stroke-width="1" opacity="0.6"/>
+
+        <!-- Navigation lights -->
+        <circle cx="140" cy="220" r="3" fill="#E8A13A" opacity="0.6"/>
+        <circle cx="460" cy="220" r="3" fill="#E8A13A" opacity="0.6"/>
+
+        <!-- Wingtip missile rails (small) -->
+        <line x1="100" y1="320" x2="95" y2="335" stroke="#1B7A9E" stroke-width="1.5" opacity="0.6"/>
+        <line x1="500" y1="320" x2="505" y2="335" stroke="#1B7A9E" stroke-width="1.5" opacity="0.6"/>
 
         <!-- Labels and indicators -->
         <g class="f-brackets" fill="none" stroke="#10272F" stroke-width="3" stroke-linecap="square">
@@ -133,8 +160,8 @@ body.p-km { --accent: var(--cyan) }
         <text x="46" y="96" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Fighter</text>
         <text x="554" y="96" text-anchor="end" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Twin-engine</text>
         <circle class="f-amber" cx="52" cy="466" r="5" fill="#E8A13A"/>
-        <text x="66" y="471" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Swept wings</text>
-        <text x="554" y="471" text-anchor="end" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Tactical air combat</text>
+        <text x="66" y="471" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Stealth design</text>
+        <text x="554" y="471" text-anchor="end" font-family="var(--body)" font-size="15" font-weight="500" fill="#10272F">Advanced fighter</text>
       </svg>
     </div>
   </div>
@@ -145,8 +172,8 @@ body.p-km { --accent: var(--cyan) }
     <h2>Advanced tactical capability.</h2>
     <div class="text">
       <p class="lede">The KM/A-77 is HGNI's domestically developed fighter aircraft for air defense and tactical operations.</p>
-      <p>The aircraft represents Hyang Gu's investment in modern fighter capability. It is built around a twin-engine configuration with swept wings for efficient transonic performance, a modern avionics suite, and multiple hardpoints for tactical payload flexibility.</p>
-      <p>The KM/A-77 complements Hyang Gu's unmanned and directed-defense platforms, providing crewed capability for air-to-air intercept, close air support, and homeland defense missions.</p>
+      <p>The aircraft represents Hyang Gu's investment in modern fighter capability. It is built around a twin-engine configuration with delta-canard aerodynamics for supersonic performance, integrated stealth shaping, and a modern avionics suite. Multiple hardpoints and internal weapons bays provide tactical payload flexibility.</p>
+      <p>The KM/A-77 complements Hyang Gu's unmanned and air-defense platforms, providing crewed capability for air-to-air intercept, close air support, and homeland defense missions.</p>
     </div>
   </div>
 </section>
@@ -159,11 +186,11 @@ body.p-km { --accent: var(--cyan) }
       <div><dt>Classification</dt><dd>Twin-engine tactical fighter aircraft</dd></div>
       <div><dt>Primary role</dt><dd>Air defense, air-to-air combat, tactical support</dd></div>
       <div><dt>Manufacturer</dt><dd>Hyang Gu National Industry (HGNI)</dd></div>
-      <div><dt>Airframe type</dt><dd>Swept-wing monoplane</dd></div>
-      <div><dt>Powerplant</dt><dd>Twin turbofan engines</dd></div>
+      <div><dt>Airframe type</dt><dd>Delta-canard blended wing fuselage</dd></div>
+      <div><dt>Powerplant</dt><dd>Twin turbofan engines with afterburners</dd></div>
       <div><dt>Crew</dt><dd>Pilot + Weapon Systems Officer</dd></div>
       <div><dt>Avionics</dt><dd>Integrated air search and fire-control radar</dd></div>
-      <div><dt>Hardpoints</dt><dd>Multiple under-wing and fuselage stations</dd></div>
+      <div><dt>Weapons carriage</dt><dd>Internal bays plus external hardpoints</dd></div>
       <div><dt>Operational status</dt><dd>In development and testing</dd></div>
     </dl>
     <p class="fine">Specifications are preliminary for the Hyang Gu setting and not verified aircraft performance.</p>
@@ -175,16 +202,16 @@ body.p-km { --accent: var(--cyan) }
     <h2>Design priorities.</h2>
     <div class="prod-cols">
       <div>
-        <h3>Efficient aerodynamics</h3>
-        <p>Swept-wing geometry and twin-engine layout optimize transonic cruise and acceleration performance while maintaining reasonable field-length requirements.</p>
+        <h3>Supersonic performance</h3>
+        <p>Delta-canard configuration with twin engines optimizes transonic and supersonic cruise while maintaining reasonable acceleration and turn performance across the combat envelope.</p>
       </div>
       <div>
-        <h3>Payload flexibility</h3>
-        <p>Multiple hardpoints and a modern avionics bus allow rapid configuration changes for different tactical missions without extensive ground conversion.</p>
+        <h3>Stealth integration</h3>
+        <p>Blended fuselage design, internal weapons carriage, and angular surfaces reduce radar signature while maintaining structural efficiency and payload capacity.</p>
       </div>
       <div>
         <h3>Domestic integration</h3>
-        <p>Design modularity and use of standardized subsystems support long-term sustainment and domestic upgrade paths as technology matures.</p>
+        <p>Modular avionics and standardized subsystems support long-term sustainment and domestic upgrade paths as technology matures and doctrine evolves.</p>
       </div>
     </div>
   </div>
@@ -215,30 +242,4 @@ body.p-km { --accent: var(--cyan) }
           <tr><th scope="row">Platform type</th><td class="us">Crewed fighter aircraft</td><td>Remotely operated or autonomous</td></tr>
           <tr><th scope="row">Endurance</th><td class="us">Hours, with aerial refueling</td><td>Hours to days depending on type</td></tr>
           <tr><th scope="row">Crew requirements</th><td class="us">Pilot + weapons officer</td><td>Ground operator team</td></tr>
-          <tr><th scope="row">Development status</th><td class="us">Active development</td><td>Fielded platforms in operation</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p class="after">The KM/A-77 complements the HG-12 Yǎnshí reconnaissance platform and HG-21 Fēngyǔ attack UAV within integrated Hyang Gu air operations.</p>
-    <div class="actions"><a class="btn line" href="index.html">Back to HGNI</a></div>
-  </div>
-</section>
-
-<section class="mottos single-motto" aria-label="Platform motto">
-  <div class="wrap">
-    <div><q>Swift. Reliable. Always ready.</q></div>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <div class="wrap">
-    <p>The KM/A-77 is a fictional fighter aircraft from the Hyang Gu setting and is not a real product.</p>
-    <p><a href="index.html">Home</a> · <a href="hg-12.html">HG-12</a> · <a href="hg-21.html">HG-21</a></p>
-  </div>
-</footer>
-
-<script src="assets/site.js" defer></script>
-</body>
-</html>
+          <tr><th scope="row">Development status</th><td class="us">Active
