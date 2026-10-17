@@ -253,6 +253,35 @@ body.p-km { --accent: var(--cyan) }
   </div>
 </footer>
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const finder = document.querySelector(".finder");
+  if (!finder) return;
+
+  finder.replaceChildren();
+
+  finder.style.position = "relative";
+  finder.style.overflow = "hidden";
+  finder.style.minHeight = "390px";
+  finder.style.background = "linear-gradient(#83b7d1, #dcebf2)";
+
+  const cloud = document.createElement("div");
+  cloud.style.cssText = `
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    width: 150px;
+    height: 45px;
+    background: white;
+    border-radius: 50px;
+    box-shadow: 25px -20px 0 5px white,
+                55px -10px 0 8px white,
+                75px 5px 0 white;
+  `;
+
+  finder.appendChild(cloud);
+});
+</script>
 <script src="assets/site.js" defer></script>
 </body>
 </html>
